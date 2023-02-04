@@ -19,12 +19,10 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         float x = -Input.GetAxis("Vertical");
-        float mx = Input.GetAxis("Mouse X");
         float my = Input.GetAxis("Mouse Y");
         this._direction.x = x;
         
-        this.transform.Rotate(new Vector3(mx * rotationSpeed, my * rotationSpeed, 0));
+        this.transform.Rotate(new Vector3(0, my * rotationSpeed, 0));
         this.transform.Translate(this._direction * speed * Time.deltaTime);
-        Debug.Log(mx + ":" + my);
     }
 }
